@@ -33,12 +33,12 @@ for line in lines[1:]: #skipping the headers
     
     #print ("measurement", measurement)
     measurements.append(measurement)
-    measurements.append(measurement+0.2)
-    measurements.append(measurement-0.2)
+    measurements.append(measurement+0.275)
+    measurements.append(measurement-0.275)
 
 # checking array validity
 print ("measurement in array", measurements[66])
-
+"""
 #Augment the number of images by getting a flip of each image
 augmented_images, augmented_measurements = [], []
 for image, measurement in zip(images, measurements):
@@ -46,20 +46,12 @@ for image, measurement in zip(images, measurements):
     augmented_measurements.append(measurement)
     augmented_images.append(cv2.flip(image,1))
     augmented_measurements.append(-1*measurement)
-
-X_train = np.array(augmented_images)
+"""
+X_train = np.array(images)#augmented_images)
 print("X_train prepared AUGMENTED")
-y_train = np.array(augmented_measurements)
+y_train = np.array(measurements)#augmented_measurements)
 print("y_train AUGMENTED")
 
-
-# Data to feed the algorithm:
-
-# original data without augmentation
-#X_train = np.array(images)
-#print("X_train prepared, preparing y_train")
-#y_train = np.array(measurements)
-#print("y_train prepared")
 
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Cropping2D
@@ -89,9 +81,24 @@ model.add(Dense(50))
 model.add(Dense(10))
 model.add(Dense(1))
 
+from keras.models import Model
+import matplotlib.pyplot as plt
+
 # it is a regression network not a classification network, 'measn square errors' is used
 model.compile(loss='mse', optimizer='adam')
 # epoch is set to 7 because after this number the prediction accuracy decreases
-model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=10)
+history_object=model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=7)
 
 model.save('model.h5')
+
+### print the keys contained in the history object
+print(history_object.history.keys())
+
+### plot the training and validation loss for each epoch
+plt.plot(history_object.history['loss'])
+plt.plot(history_object.history['val_loss'])
+plt.title('model mean squared error loss')
+plt.ylabel('mean squared error loss')
+plt.xlabel('epoch')
+plt.legend(['training set', 'validation set'], loc='upper right')
+plt.show()
