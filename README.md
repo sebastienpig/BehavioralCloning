@@ -28,11 +28,14 @@ The first architecture proposed in the lesson drove the car directly in the moun
 
 For the project I relied on the Nvidia architecture that allowed the car to immediatly start taking turns, follow the road.
 What made a big difference was to use additional images, either slipping the center image or adding the right left and right cameras.
+This helped decreasing the error loss.
 
 Final architecture:<br>
 
-<img src="assets/network-architecture.jpg"> Nvidia Architecture
+<img src="assets/network-architecture.jpg"> 
+<br>Nvidia Architecture
 
+It has a normalization layer, 5 convolutional layers and 4 fully connected layers.
 
 <h3> visualizing the acquired data </h3>
 Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the same reference:<br>
