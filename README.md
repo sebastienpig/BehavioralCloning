@@ -155,7 +155,24 @@ Final architecture:<br>
 <img src="assets/network-architecture.jpg"> 
 <br>Nvidia Architecture
 
-It has a normalization layer, 5 convolutional layers and 4 fully connected layers.
+It has a normalization layer, 5 convolutional layers and 4 fully connected layers. 
+
+<b> Avoiding overfitting:</b><br>
+I added 3 dropout layers at 50% each before each final layers: <br>
+<pre>
+#Using Dropout to avoid overfitting
+<b>model.add(Dropout(0.5))</b>
+model.add(Flatten())
+model.add(Dense(100))
+#Using Dropout to avoid overfitting
+<b>model.add(Dropout(0.5))</b>
+model.add(Dense(50))
+#Using Dropout to avoid overfitting
+<b>model.add(Dropout(0.5))</b>
+model.add(Dense(10))
+model.add(Dense(1))
+</pre>
+
 
 
 <h3> Augmented the number of images </h3>
@@ -195,27 +212,27 @@ associating angles:
     
     #print ("measurement", measurement)
     measurements.append(measurement)
-    measurements.append(measurement+0.275)
-    measurements.append(measurement-0.275)
+    measurements.append(measurement+0.25)
+    measurements.append(measurement-0.25)
     
   </pre>  
     
 <h3> Fine Tuning the Model </h3>
    
-   <li>I chose epochs = 7.</li>
-   <li>the angles: </li> <br> the angles created frtom the left and right camera the value that allowed the car to stay on the road was +/- 0.275
-   With 0.27 the car was slightly driving over the side after the bridge
+   <li>I chose epochs = 10</li>
+   <li>the angles: </li> <br> the angles created frtom the left and right camera the value that allowed the car to stay on the road was +/- 0.25
+   
    
 <h3> Error Loss </h3>
 
 <img src="assets/loss_graph_010518.png">
-<br>The error loss shows that after 4 epochs the error is decreasing jsut a little.
-<br>I chose 7 as my car was driving almost perfect but still I needed an extra precision
+<br>The error loss shows that after 6 epochs the validation error is decreasing.
+<br>I chose 10 epochs vs 7 epochs previously to decrease the error loss. The car is driving perfectly even after three droput layers that avoid overfitting.
 
 <br>EPOCH running on the computer:
-<img src="assets/error_loss_decreasing">
+<img src="assets/loss_graph_010618_droput50x3-10epochs-angle025-good.png">
 
-<h3> Recording the video </h3>
+<h3> Recording the video: <b>run5.mpg</b> </h3>
 
 The dependencies for video.py were missing in the docker, was resolved using :
 <pre>
