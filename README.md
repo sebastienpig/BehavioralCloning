@@ -15,11 +15,15 @@ docker run -it --rm -p 8888:8888 -v `pwd`:/src udacity/carnd-term1-starter-kit
 <h3>Strategies for Collecting Data</h3>
 
 Using the simulator on the first track I trained the car over 3 laps:
--stay in the middle of the road
--decrease speed when approaching a curve
--recover to the center when veering off the side
+- 2 lapes driving forward
+- 1 lap driving following the track in the opposite direction to learn more curbs
+- stay in the middle of the road
+- recover to the center when veering off the side:record several parts starting from the side of the side of the road and moving to center to learn how to avoid the sides
 
-data are saved in a separate folder 'data' under the form of a csv and IMG folder containing screen shots of the scene
+Image name <center><left><right> information is saved in the director 'data' as "driving_log.csv" and the images are saved in the IMG folder.
+
+<h3> Architecture </h3>
+
 
 <h3> visualizing the acquired data </h3>
 Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the same reference:<br>
