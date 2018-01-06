@@ -15,7 +15,7 @@ docker run -it --rm -p 8888:8888 -v `pwd`:/src udacity/carnd-term1-starter-kit
 <h3>Strategies for Collecting Data</h3>
 
 Using the simulator on the first track I trained the car over 3 laps:
-- 2 lapes driving forward
+- 2 laps driving forward
 - 1 lap driving following the track in the opposite direction to learn more curbs
 - stay in the middle of the road
 - recover to the center when veering off the side:record several parts starting from the side of the side of the road and moving to center to learn how to avoid the sides
