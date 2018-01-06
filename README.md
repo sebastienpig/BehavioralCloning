@@ -28,6 +28,21 @@ On using generator: I tried out the generator as memeory was a limiting factor o
 
 I used a PC 
 
+<li> Preprocessing </li>
+
+The data are normalized and then cropped to give the focus on the road and above the windshield. This helps to get resutls fater.
+
+<pre>
+      
+model.add(Lambda(lambda x: x/255.0 - 0.5, input_shape = (160, 320, 3)))
+print("Lambda applied")
+
+model.add(Cropping2D(cropping=((70,25),(0,0))))
+print("Cropping applied")
+</pre>
+
+
+For reference Generator I tried:
 <pre>
 def generator(lines, batch_size=32):
     num_samples = len(lines)
@@ -163,6 +178,8 @@ associating angles:
 <br>The error loss shows that after 4 epochs the error is decreasing jsut a little.
 <br>I chose 7 as my car was driving almost perfect but still I needed an extra precision
 
+<br>EPOCH running on the computer:
+<img src="error_loss_decreasing">
 
 <h3> Recording the video </h3>
 
