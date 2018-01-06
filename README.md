@@ -27,14 +27,14 @@ Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the s
 
 <table style="width:100%">
   <tr>
-    <th>CENTER</th>
-    <th>LEFT</th> 
+    <th>LEFT</th>
+    <th>CENTER</th> 
     <th>RIGHT</th>
   </tr>
   <tr>
-    <td><img src="assets/center_2017_12_31_17_54_56_108.jpg"></td>
-    <td><img src="assets/left_2017_12_31_17_54_56_108.jpg"> </td> 
-    <td><img src="assets/right_2017_12_31_17_54_56_108.jpg"> </td>
+    <td><img src="assets/left_2018_01_04_15_20_38_120.jpg"></td>
+    <td><img src="assets/center_2018_01_04_15_20_38_120.jpg"> </td> 
+    <td><img src="assets/right_2018_01_04_15_20_38_120.jpg"> </td>
   </tr>
  
 </table>
