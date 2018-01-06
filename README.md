@@ -75,7 +75,13 @@ associating angles:
    
 <h3> Error Loss </h3>
 
-<img src="loss_graph_010518.png"> The error loss shows that after 5 epochs the error is increasing, I could have reduced the number of epochs to 5 instead of 7
+<img src="assets/loss_graph_010518.png"> The error loss shows that after 5 epochs the error is increasing, I could have reduced the number of epochs to 5 instead of 7
 
 
+<h3> Recording the video </h3>
 
+The dependencies for video.py were missing in the docker, was resolved using :
+<pre>
+import imageio
+imageio.plugins.ffmpeg.download()
+</pre>
