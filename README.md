@@ -1,5 +1,17 @@
 # BehavioralCloning
 
+<h3> Using docker </h3>
+
+For this project I used a docker as I was navigating between computers to look for more horsepower, docker made it wasy to switch computer to computer.
+
+<pre>
+docker pull udacity/carnd-term1-starter-kit
+</pre>
+
+<pre>
+docker run -it --rm -p 8888:8888 -v `pwd`:/src udacity/carnd-term1-starter-kit
+</pre>
+
 <h3>Strategies for Collecting Data</h3>
 
 Using the simulator on the first track I trained the car over 3 laps:
@@ -75,7 +87,9 @@ associating angles:
    
 <h3> Error Loss </h3>
 
-<img src="assets/loss_graph_010518.png"> The error loss shows that after 5 epochs the error is increasing, I could have reduced the number of epochs to 5 instead of 7
+<img src="assets/loss_graph_010518.png">
+<br>The error loss shows that after 4 epochs the error is decreasing jsut a little.
+<br>I chose 7 as my car was driving almost perfect but still I needed an extra precision
 
 
 <h3> Recording the video </h3>
