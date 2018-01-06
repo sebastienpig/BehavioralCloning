@@ -24,7 +24,7 @@ Image name <center><left><right> information is saved in the director 'data' as 
 
 <h3> visualizing the acquired data </h3>
 Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the same reference:<br>
-<center><left><right>_2017_12_31_17_54_56_108.jpg: <br><br>
+<center><left><right>_2018_01_04_15_20_38_120: <br><br>
 
 <table style="width:100%">
   <tr>
