@@ -179,7 +179,7 @@ associating angles:
 <br>I chose 7 as my car was driving almost perfect but still I needed an extra precision
 
 <br>EPOCH running on the computer:
-<img src="error_loss_decreasing">
+<img src="assets/error_loss_decreasing">
 
 <h3> Recording the video </h3>
 
