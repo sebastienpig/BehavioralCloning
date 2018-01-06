@@ -22,6 +22,25 @@ Using the simulator on the first track I trained the car over 3 laps:
 
 Image name <center><left><right> information is saved in the director 'data' as "driving_log.csv" and the images are saved in the IMG folder.
 
+<h3> visualizing the acquired data </h3>
+Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the same reference:<br>
+<center><left><right>_2017_12_31_17_54_56_108.jpg: <br><br>
+
+<table style="width:100%">
+  <tr>
+    <th>LEFT</th>
+    <th>CENTER</th> 
+    <th>RIGHT</th>
+  </tr>
+  <tr>
+    <td><img src="assets/left_2018_01_04_15_20_38_120.jpg"></td>
+    <td><img src="assets/center_2018_01_04_15_20_38_120.jpg"> </td> 
+    <td><img src="assets/right_2018_01_04_15_20_38_120.jpg"> </td>
+  </tr>
+ 
+</table>
+
+
 <h3> Programming </h3>
 
 On using generator: I tried out the generator as memeory was a limiting factor on my PC but it was really too slow, especially when you have to follow a try and errors approach.
@@ -43,7 +62,8 @@ model.compile(loss='mse', optimizer='adam')
 history_object=model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=7)
 
 </pre>
-<li> Preprocessing </li>
+
+<b> Preprocessing </b>
 
 The data are normalized, mean centraled and then cropped to give the focus on the road and above the windshield. This helps to get resutls fater.
 
@@ -125,23 +145,6 @@ Final architecture:<br>
 
 It has a normalization layer, 5 convolutional layers and 4 fully connected layers.
 
-<h3> visualizing the acquired data </h3>
-Each sampling has a <b>center</b>, <b>left</b> and <b>right</b> image with the same reference:<br>
-<center><left><right>_2017_12_31_17_54_56_108.jpg: <br><br>
-
-<table style="width:100%">
-  <tr>
-    <th>LEFT</th>
-    <th>CENTER</th> 
-    <th>RIGHT</th>
-  </tr>
-  <tr>
-    <td><img src="assets/left_2018_01_04_15_20_38_120.jpg"></td>
-    <td><img src="assets/center_2018_01_04_15_20_38_120.jpg"> </td> 
-    <td><img src="assets/right_2018_01_04_15_20_38_120.jpg"> </td>
-  </tr>
- 
-</table>
 
 <h3> Augmented the number of images </h3>
 
