@@ -152,7 +152,7 @@ This helped decreasing the error loss.
 
 Final architecture:<br>
 
-<img src="assets/network-architecture.jpg"> 
+<img src="assets/network-architecture_augmented.jpg"> 
 <br>Nvidia Architecture
 
 It has a normalization layer, 5 convolutional layers and 4 fully connected layers. 
