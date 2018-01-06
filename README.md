@@ -26,7 +26,9 @@ Image name <center><left><right> information is saved in the director 'data' as 
 
 On using generator: I tried out the generator as memeory was a limiting factor on my PC but it was really too slow, especially when you have to follow a try and errors approach.
 
-I used a PC 
+Using a simple form I was at the limit of the computer and it took around <b>14 minutes to process the 7 epochs</b>.
+
+<br><img src="assets/DELL.jpg">
 
 <li> Preprocessing </li>
 
