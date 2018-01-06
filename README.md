@@ -30,9 +30,22 @@ Using a simple form I was at the limit of the computer and it took around <b>14 
 
 <br><img src="assets/DELL.jpg">
 
+<b> Train/Validation </b><br>
+
+A ratio of 20% was used as for the Training and Validation sets to avoid over fitting. The data are also shuffled.
+The loss is evaluated using a Means Square Errors and the optimizer is Adam.
+
+<pre>
+# it is a regression network not a classification network, 'measn square errors' is used
+model.compile(loss='mse', optimizer='adam')
+
+# epoch is set to 7 because after this number the prediction accuracy decreases
+history_object=model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=7)
+
+</pre>
 <li> Preprocessing </li>
 
-The data are normalized and then cropped to give the focus on the road and above the windshield. This helps to get resutls fater.
+The data are normalized, mean centraled and then cropped to give the focus on the road and above the windshield. This helps to get resutls fater.
 
 <pre>
       
@@ -43,8 +56,10 @@ model.add(Cropping2D(cropping=((70,25),(0,0))))
 print("Cropping applied")
 </pre>
 
+The mean centraled is by subtracting 0.5: <br> model.add(Lambda(lambda x: x/255.0 <b>- 0.5</b>, input_shape = (160, 320, 3)))<br><br>
 
-For reference Generator I tried:
+<br><br>
+For reference the Generator I tried and did not end up using:
 <pre>
 def generator(lines, batch_size=32):
     num_samples = len(lines)
