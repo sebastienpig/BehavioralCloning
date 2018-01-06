@@ -222,7 +222,7 @@ associating angles:
 <h3> Fine Tuning the Model </h3>
    
    <li>I chose epochs = 10</li>
-   <li>the angles: </li> <br> the angles created frtom the left and right camera the value that allowed the car to stay on the road was +/- 0.25
+   <li>the angles: </li> the angles created frtom the left and right camera the value that allowed the car to stay on the road was +/- 0.25
    
    
 <h3> Error Loss </h3>
@@ -233,7 +233,7 @@ associating angles:
 <br>EPOCH running on the computer:
 <img src="assets/loss_graph_010618_droput50x3-10epochs-angle025-good.png">
 
-<h3> Recording the video: <b>run5.mpg</b> </h3>
+<h3> Recording the video: <b><h4>run5.mp4</h4></b> </h3>
 
 The dependencies for video.py were missing in the docker, was resolved using :
 <pre>
