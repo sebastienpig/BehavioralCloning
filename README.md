@@ -144,7 +144,7 @@ model.save('model.h5')
 
 <h3> Architecture </h3>
 
-The first architecture proposed in the lesson drove the car directly in the mountain.
+The first architecture proposed in the lesson drove the car directly in the mountain with 3 layers or LeNet.
 
 For the project I relied on the Nvidia architecture that allowed the car to immediatly start taking turns, follow the road.
 What made a big difference was to use additional images, either slipping the center image or adding the right left and right cameras.
