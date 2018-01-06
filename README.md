@@ -164,7 +164,7 @@ for image, measurement in zip(images, measurements):
 """
 </pre>
 
-But it was too much memory intensive when adding adding the right and left cameras images.
+But it was too much memory intensive when adding adding the right and left cameras images. Still using only flipping the images I was almost good but ended up too much on the side (model model.h5_good_2mistakes).
 
 <li> adding the image from the left and right cameras and associating angles to them </li>
 <pre>
