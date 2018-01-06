@@ -158,7 +158,9 @@ Final architecture:<br>
 It has a normalization layer, 5 convolutional layers and 4 fully connected layers. 
 
 <b> Avoiding overfitting:</b><br>
-I added 3 dropout layers at 50% each before each final layers: <br>
+I added 3 dropout layers at 50% each before each final layers. I tried a rate of 80% but the error loss was above 7% and the car did not make the first turn. <br>
+
+Final code here:<br>
 <pre>
 #Using Dropout to avoid overfitting
 <b>model.add(Dropout(0.5))</b>
@@ -225,7 +227,6 @@ associating angles:
    
 <h3> Error Loss </h3>
 
-<img src="assets/loss_graph_010518.png">
 <br>The error loss shows that after 6 epochs the validation error is decreasing.
 <br>I chose 10 epochs vs 7 epochs previously to decrease the error loss. The car is driving perfectly even after three droput layers that avoid overfitting.
 
