@@ -128,6 +128,18 @@ def generator(lines, batch_size=32):
 train_generator = generator(train_samples, batch_size=32)
 validation_generator = generator(validation_samples, batch_size=32)            
 
+
+<b> The model is saved </b>
+
+Saving the model with keras captures and allows: 
+<br>to re-create the model
+<br>save the weights of the model
+<br>the training configuration (loss, optimizer)
+<br>the state of the optimizer, allowing to resume training exactly where it has been left off.
+<pre>
+model.save('model.h5')
+</pre>
+
 </pre>
 
 <h3> Architecture </h3>
