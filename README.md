@@ -164,6 +164,8 @@ for image, measurement in zip(images, measurements):
 """
 </pre>
 
+But it was too much memory intensive when adding adding the right and left cameras images.
+
 <li> adding the image from the left and right cameras and associating angles to them </li>
 <pre>
     image = cv2.imread(current_path)
