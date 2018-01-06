@@ -22,6 +22,62 @@ Using the simulator on the first track I trained the car over 3 laps:
 
 Image name <center><left><right> information is saved in the director 'data' as "driving_log.csv" and the images are saved in the IMG folder.
 
+<h3> Programming </h3>
+
+On using generator: I tried out the generator as memeory was a limiting factor on my PC but it was really too slow, especially when you have to follow a try and errors approach.
+
+I used a PC 
+
+<pre>
+def generator(lines, batch_size=32):
+    num_samples = len(lines)
+    while 1: # Loop forever so the generator never terminates
+        shuffle(lines)
+        
+        for offset in range(1, num_samples, batch_size): #starts at 1 to avoid headers
+            batch_samples = lines[offset:offset+batch_size]
+
+            images = []
+            angles = []
+            for batch_sample in batch_samples:
+                source_path = line[0]
+                filename = source_path.split('/')[-1]
+                current_path =filename # 'data/IMG/'+ filename
+
+                #print("current path", current_path)
+                image = cv2.imread(current_path)
+                images.append(image)
+    
+                # extracting the steering wheel as labels
+                #print ("steering angle", line[3])
+                #print ("angle measurement", measurement)
+            
+                measurement = float(batch_sample[3])
+                angles.append(measurement)
+                
+                # checking array validity
+                #print ("measurement in array", measurements[66])
+
+                #Augment the number of images by getting a flip of each image
+                augmented_images, augmented_angles = [], []
+                for image, measurement in zip(images, angles):
+                    augmented_images.append(image)
+                    augmented_angles.append(measurement)
+                    augmented_images.append(cv2.flip(image,1))
+                    augmented_angles.append(-1*measurement)
+
+            # trim image to only see section with road
+            X_train = np.array(augmented_images)
+            y_train = np.array(augmented_angles)
+            yield sklearn.utils.shuffle(X_train, y_train)
+            
+            
+# compile and train the model using the generator function
+train_generator = generator(train_samples, batch_size=32)
+validation_generator = generator(validation_samples, batch_size=32)            
+
+</pre>
+
 <h3> Architecture </h3>
 
 The first architecture proposed in the lesson drove the car directly in the mountain.
