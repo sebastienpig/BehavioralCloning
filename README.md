@@ -31,7 +31,7 @@ What made a big difference was to use additional images, either slipping the cen
 
 Final architecture:<br>
 
-<img src="network-architecture.jpg"> Nvidia Architecture
+<img src="assets/network-architecture.jpg"> Nvidia Architecture
 
 
 <h3> visualizing the acquired data </h3>
